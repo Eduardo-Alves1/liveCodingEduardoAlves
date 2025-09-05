@@ -1,0 +1,28 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Cypress
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+cypress/fixtures/example.json
+
+# Logs
+*.log
+*.cache
+
+# IDEs/Editors
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de Configuração Pessoais
+.env
+*.local
