@@ -1,6 +1,6 @@
 class AuthAPI {
   static login(credentials) {
-    return cy.request({
+    return cy.api({
       method: 'POST',
       url: '/login',
       body: credentials,

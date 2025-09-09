@@ -2,7 +2,7 @@
 
 class Produto{
     static novoProduto(produto, token){
-        return cy.request({
+        return cy.api({
             method: 'POST',
             url: '/produtos',
             headers: { Authorization: token },
@@ -12,7 +12,7 @@ class Produto{
     }   
 
     static buscarProduto() {
-        return cy.request({
+        return cy.api({
             method: 'GET',
             url: '/produtos',
             failOnStatusCode: false
@@ -20,9 +20,18 @@ class Produto{
     }
 
     static buscarProdutoPorNome(nome) {
-        return cy.request({
+        return cy.api({
             method: 'GET',
             url: `/produtos?nome=${nome}`,
+            failOnStatusCode: false
+        });
+    }
+
+    static deletarProduto(id, token) {
+        return cy.api({
+            method: 'DELETE',
+            url: `/produtos/${id}`,
+            headers: { Authorization: token },
             failOnStatusCode: false
         });
     }

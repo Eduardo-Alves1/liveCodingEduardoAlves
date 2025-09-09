@@ -1,6 +1,6 @@
 class Usuario {
   static registrarUsuario(dadosUsuario) {
-    return cy.request({
+    return cy.api({
       method: 'POST',
       url: '/usuarios',
       body: dadosUsuario,

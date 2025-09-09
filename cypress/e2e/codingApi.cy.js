@@ -59,6 +59,22 @@ describe('Testes da API Live Coding EDUARDO ALVES', () => {
             expect(response.body.produtos[0].nome).to.eq(produto);
         });
     });
+
+    it('CT05 - [deletarProduto]Deletar produto', () => {
+        // Aqui eu busco o produto primeiro para pegar o ID
+        Produto.buscarProdutoPorNome(produto).then((response) => {
+            expect(response.status).to.eq(200);
+            expect(response.body.produtos).to.have.length.greaterThan(0);
+            
+            const produtoId = response.body.produtos[0]._id;
+            
+            // Aqui eu deleto o produto usando o ID obtido
+            Produto.deletarProduto(produtoId, token).then((deleteResponse) => {
+                expect(deleteResponse.status).to.eq(200);
+                expect(deleteResponse.body.message).to.eq('Registro excluído com sucesso');
+            });
+        });
+    });
 });
 
 // PESSOAL COLOQUEI DENTRO DE UM DESCRIBE PARA FICAR MAIS ORGANIZADO E SUCINTO
