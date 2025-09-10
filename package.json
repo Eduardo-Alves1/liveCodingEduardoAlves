@@ -1,5 +1,15 @@
 {
+  "name": "cypress-api-tests",
+  "version": "1.0.0",
+  "description": "Testes de API com Cypress",
+  "scripts": {
+    "test": "cypress run",
+    "test:open": "cypress open",
+    "test:produto": "cypress run --env grep='@produto'",
+    "test:carrinho": "cypress run --env grep='@carrinho'"
+  },
   "devDependencies": {
+    "@cypress/grep": "^4.1.1",
     "cypress": "^15.1.0",
     "cypress-plugin-api": "^2.11.2"
   }
