@@ -5,8 +5,18 @@
   "scripts": {
     "test": "cypress run",
     "test:open": "cypress open",
+    "test:all": "cypress run --spec 'cypress/e2e/**/*.cy.js'",
+    "test:headless": "cypress run --headless",
+    "test:chrome": "cypress run --browser chrome",
+    "test:firefox": "cypress run --browser firefox",
+    "test:edge": "cypress run --browser edge",
     "test:produto": "cypress run --env grep='@produto'",
-    "test:carrinho": "cypress run --env grep='@carrinho'"
+    "test:carrinho": "cypress run --env grep='@carrinho'",
+    "test:login": "cypress run --env grep='@login'",
+    "test:session": "cypress run --env grep='@session'",
+    "test:parallel": "cypress run --parallel",
+    "test:record": "cypress run --record",
+    "test:ci": "cypress run --ci"
   },
   "devDependencies": {
     "@cypress/grep": "^4.1.1",
