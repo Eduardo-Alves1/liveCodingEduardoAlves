@@ -23,7 +23,7 @@
 
 // Importar a classe AuthAPI
 import AuthAPI from '../pages/Auth';
-import { Usuario } from '../pages/UserAPI';
+
 
 // -- Comando de login com Cypress Session --
 Cypress.Commands.add('login', (email, password) => {
